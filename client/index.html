@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Recommendation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/3537fd9e2b.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="main-container">
+        <header class="header">
+            <h1 class="main-title">Zona de Musica</h1>
+        </header>
+        <section class="card-section">
+            <div class="input-card">
+                <header class="card-header">
+                    <h3 class="card-title">Agrega a tus favoritos</h3>
+                </header>
+                <div class="card-content">
+                    <form>
+                        <div class="form-group">
+                            <label for="song_name">Nombre del tema:</label>
+                            <input class="form-input" type="text" id="song_name" placeholder="Enter song name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="artist_name">Artista:</label>
+                            <input class="form-input" type="text" id="artist_name" placeholder="Enter artist name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="song_url">URL:</label>
+                            <input class="form-input" type="url" id="song_url" placeholder="Enter song URL" required>
+                        </div>
+                    </form>
+                </div>
+                <footer class="card-footer">
+                    <button class="btn-primary" id="addSong"><i class="fa-solid fa-plus"></i> Añadir</button>
+                </footer>
+            </div>
+            <div class="recommendation-card">
+                <header class="card-header">
+                    <h2 class="card-title">Canciones recomendadas</h2>
+                </header>
+                <div class="card-content">
+                    <button class="btn-secondary" id="showRandomSong"><i class="fa-solid fa-music"></i> Mostrar recomendaciones</button>
+                </div>
+            </div>
+        </section>
+        <div id="song-display"></div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <ul class="social-links">
+                <li>
+                    <a href="https://github.com/ArielU10" target="_blank"><i class="fa-brands fa-github"></i></a>
+                </li>
+            </ul>
+            <p>&copy; Musica recomendations</p>
+        </div>
+    </footer>
+
+    <template id="song-template">
+        <div class="song-container">
+            <p class="song-id"></p>
+            <div class="interaction-section">
+                <button class="like-btn"><i class="fa-solid fa-heart"></i> Like</button>
+                <span class="like-count"></span>
+            </div>
+            <h2 class="song-title"></h2>
+            <h3 class="song-artist"></h3>
+            <a class="song-link" href="" target="_blank"><i class="fa-brands fa-youtube"></i> Watch Video</a>
+        </div>
+    </template>
+</body>
+
+</html>
